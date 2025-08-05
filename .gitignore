@@ -1,0 +1,31 @@
+# Dependencies
+coopiteasy_web/
+coopiteasy_colors/
+oca_web/
+oca_server-env/
+oca_storage/
+oca_server_tools/
+xcg_prometheus/
+xcgd_Web/
+
+odoo/
+
+# Environment variables
+.env
+
+# Local mount
+logs/
+
+**/*.pyc
+__pycache__/
+
+# VSCode module
+.history/
+
+# PyChar config
+.idea
+
+# Rapport auto-généré de coverage
+coverage_html_report/
+
+*.class

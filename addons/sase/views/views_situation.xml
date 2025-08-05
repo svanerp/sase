@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <!-- LIST VIEW -->
+    <record id="view_list_situation" model="ir.ui.view">
+        <field name="name">sase.situation.list</field>
+        <field name="model">sase.situation</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="state in ('cancelled')" decoration-success="state in ('done')" decoration-warning="state in ('draft')">
+                <field name="state" />
+                <field name="service_id" />
+                <field name="latence" />
+                <field name="date_officialisation" />
+                <field name="nom" />
+                <field name="equivalent_situation" />
+                <field name="nb_jours" />
+                <field name="date_fin" />
+                <field name="is_report_due" />
+            </list>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_form_situation" model="ir.ui.view">
+        <field name="name">sase.situation.form</field>
+        <field name="model">sase.situation</field>
+        <field name="arch" type="xml">
+            <form>
+                <!-- <header>
+                    <button name="cancel" type="object" string="Annuler le dossier" class="btn-primary" confirm="Êtes-vous sûr de vouloir annuler ce dossier ?" />
+                </header> -->
+                <sheet>
+                    <widget name="web_ribbon" title="Terminé" bg_color="bg-success" invisible="state != 'done'" />
+                    <widget name="web_ribbon" title="Annulé" bg_color="bg-danger" invisible="state != 'cancelled'" />
+                    <widget name="web_ribbon" title="Admission" bg_color="bg-warning" invisible="state != 'draft'" />
+
+                    <group>
+                        <field name="nom" />
+
+                        <field name="enfant_ids" widget="many2many_tags" options="{'create': False}" />
+                        <field name="equivalent_situation" />
+
+                        <field name="date_officialisation" />
+                        <field name="date_fin" />
+                        <field name="nb_jours" />
+                        <field name="latence" />
+                    </group>
+                    <notebook>
+                        <page string="Dates">
+                            <group>
+                                <field name="date_notification" />
+                                <field name="date_reservation" />
+                                <field name="date_ep1" />
+                                <field name="date_ep2" />
+                                <field name="date_ep3" />
+                                <field name="date_officialisation" />
+                                <field name="date_sortie" />
+                                <field name="date_annulation" />
+                            </group>
+                        </page>
+                        <page string="Mandant">
+                            <group>
+                                <field name="service_id" />
+                                <field name="service_mandant" domain="[('is_directeur', '=', True),('service_id','=', service_id)]" />
+                                <field name="service_delegue" domain="[('is_directeur', '=', False),('service_id','=', service_id)]" />
+
+                            </group>
+                        </page>
+                        <page string="Rapports">
+                            <field name="report_ids" widget="one2many_list" options="{'create': False, 'delete': False}">
+                                <list editable="bottom">
+                                    <field name="nom" />
+                                    <field name="date_prevue" />
+                                    <field name="date_reelle" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- SEARCH VIEW -->
+    <record id="view_search_situation" model="ir.ui.view">
+        <field name="name">sase.situation.search</field>
+        <field name="model">sase.situation</field>
+        <field name="arch" type="xml">
+            <search string="SSS">
+                <group expand="1" string="Group By">
+                    <filter name="service_id" string="Service" context="{'group_by': 'service_id'}" />
+                    <filter name="service_mandant" string="Mandant" context="{'group_by': 'service_mandant'}" />
+                    <filter name="service_delegue" string="Délégué" context="{'group_by': 'service_delegue'}" />
+                    <separator />
+                    <filter name="state" string="Etat" context="{'group_by': 'state'}" />
+
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

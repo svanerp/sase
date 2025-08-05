@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <record id="view_list_enfant" model="ir.ui.view">
+        <field name="name">sase.enfant.list</field>
+        <field name="model">sase.enfant</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="nom" />
+                <field name="prenom" />
+                <field name="date_naissance" />
+                <field name="age" />
+                <field name="genre" />
+                <field name="situation_ids" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_form_enfant" model="ir.ui.view">
+        <field name="name">sase.enfant.form</field>
+        <field name="model">sase.enfant</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nom" />
+                        <field name="prenom" />
+                        <field name="date_naissance" />
+                        <field name="age" />
+                        <field name="genre" />
+                        <field name="notes" />
+                    </group>
+                    <notebook>
+                        <page string="Dossiers">
+                            <field name="situation_ids" options="{'create': False}" string="">
+                                <list>
+                                    <field name="date_officialisation" />
+                                    <field name="date_fin" />
+                                    <field name="nom" />
+                                    <field name="state" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

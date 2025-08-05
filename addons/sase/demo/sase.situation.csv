@@ -1,0 +1,4 @@
+id,nom,description,service_id:id
+situation_demo_1,Situation A,Description for situation A,service_saj_AAA
+situation_demo_2,Situation B,Description for situation B,service_saj_AAA
+situation_demo_3,Situation C,Description for situation C,service_saj_AAA

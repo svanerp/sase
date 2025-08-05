@@ -1,0 +1,5 @@
+jsonschema==4.22.0
+watchdog==3.0.0
+freezegun==1.1.0 ; python_version < '3.11'  # (Jammy)
+freezegun==1.2.1 ; python_version >= '3.11' and python_version < '3.13'
+freezegun==1.5.1 ; python_version >= '3.13'

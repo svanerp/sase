@@ -1,0 +1,83 @@
+services:
+  odoo:
+    container_name: sase
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8069:8069
+      - 8072:8072
+    environment:
+      - HOST=postgres
+      - USER=odoo
+      - PASSWORD=odoo
+      # - WDB_SOCKET_SERVER=wdb
+      # - WDB_NO_BROWSER_AUTO_OPEN=True
+      - CARBONE_HOST=http://carbone:4000
+      - CARBONE_APIKEY=abc
+      # - MINIO_ENDPOINT=http://minio:9000 # En dev local, laisser ces 3 lignes MINIO_ commentée, sinon stockage dans MINIO
+      # - MINIO_ACCESS_KEY=CZTVQDQDFO7onWyhBmx2
+      # - MINIO_SECRET_KEY=SiFpLwAgBquCyritCIY4Ngil7OzN1VenGeJy9Dt9
+      - SESSION_DB_URI=vision # En production, mentionner ici une DB dédiée à recueillir les sessions
+      - odoo_prometheus_enabled=False
+      - PROMETHEUS_MULTIPROC_DIR=/tmp
+    volumes:
+      - ./addons:/mnt/extra-addons
+      - ./logs:/var/log/odoo/
+      - /extra-addons/oca_web:/mnt/extra-addons/oca_web
+      - /extra-addons/oca_server_tools:/mnt/extra-addons/oca_server
+    command:
+      - --database=sase
+      - --init=sase
+      - --update=sase
+      - --dev=all
+      # - --without-demo=all
+      - --load-language=fr_BE
+      - --smtp=smtp4dev
+      - --smtp-port=25
+      - --email-from=noreply@sase.be
+      - --log-level=info
+      - --logfile=/var/log/odoo/odoo.log
+    depends_on:
+      postgres:
+        condition: service_healthy
+      carbone:
+        condition: service_started
+    restart: always
+
+  postgres:
+    container_name: postgres_sase
+    image: harbor.imio.be/docker-hub/library/postgres:15
+    ports:
+      - 5532:5432
+    environment:
+      - POSTGRES_DB=vision
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+    volumes:
+      - postgres-volume:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo -h postgres -d vision"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+  smtp4dev:
+    container_name: smtp4dev
+    image: harbor.imio.be/docker-hub/rnwood/smtp4dev
+    ports:
+      - 8070:80
+
+  # Add the
+  carbone:
+    container_name: carbone_sase
+    image: harbor.imio.be/docker-hub/carbone/carbone-ee:4.22.5
+    ports:
+      - 4000:4000
+    env_file:
+      - .env # Vérifier que CARBONE_EE_STUDIO=true (en plus de la clé de licence)
+
+volumes:
+  postgres-volume:
+  odoo-volume:

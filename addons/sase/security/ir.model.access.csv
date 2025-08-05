@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sase_enfant,access_sase_enfant,model_sase_enfant,base.group_user,1,1,1,1
+access_sase_situation,access_sase_situation,model_sase_situation,base.group_user,1,1,1,1
+access_sase_service,access_sase_service,model_sase_service,base.group_user,1,1,1,1
+access_sase_service_employe,access_sase_service_employe,model_sase_service_employe,base.group_user,1,1,1,1
+access_sase_rapport,access_sase_rapport,model_sase_rapport,base.group_user,1,1,1,1
+

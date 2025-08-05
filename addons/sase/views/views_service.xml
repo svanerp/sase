@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <record id="view_list_service" model="ir.ui.view">
+        <field name="name">sase.service.list</field>
+        <field name="model">sase.service</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="nom" />
+                <field name="nb_places_reservees" />
+                <field name="nb_places_occupees" />
+
+            </list>
+        </field>
+    </record>
+
+    <record id="view_form_service" model="ir.ui.view">
+        <field name="name">sase.service.form</field>
+        <field name="model">sase.service</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="compute_nb_places_occupees" type="object" string="Calculer" class="btn-primary" />
+
+                </header>
+                <sheet>
+                    <group>
+                        <field name="nom" />
+                        <field name="employe_ids" widget="many2many_tags" />
+                        <field name="nb_places_reservees" />
+                        <field name="nb_places_occupees" />
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

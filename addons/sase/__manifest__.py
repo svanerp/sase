@@ -1,0 +1,27 @@
+{
+    "name": "sase",
+    "summary": "Module permettant la gestion des rapports et de leurs modèles",
+    "version": "18.0.1.0.0",
+    "author": "Stéphane Van Erp",
+    "license": "AGPL-3",
+    "category": "sase",
+    "depends": [
+        "base",
+        "web",
+    ],
+    "application": True,
+    "data": [
+        "security/ir.model.access.csv",
+        "views/menu.xml",
+        "views/views_enfant.xml",
+        "views/views_situation.xml",
+        "views/views_service.xml",
+        "data/cron_report_due.xml",
+    ],
+    "demo": [
+        "demo/sase.service.csv",
+        "demo/sase.service_employe.csv",
+        "demo/sase.enfant.csv",
+        "demo/sase.situation.csv",
+    ],
+}

@@ -1,0 +1,4 @@
+id,nom,prenom,date_naissance,genre,
+enfant_demo_1,Doe,John,2010-01-01,male
+enfant_demo_2,Doe,Jane,2011-02-02,female
+enfant_demo_3,Alice,Johnson,2012-03-03,female
