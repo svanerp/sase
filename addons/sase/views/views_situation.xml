@@ -79,8 +79,10 @@
                         <page string="Rapports">
                             <field name="report_ids" widget="one2many_list" options="{'create': False, 'delete': False}">
                                 <list editable="bottom">
+                                    <field name="enfant_id" width="300px" />
                                     <field name="nom" width="300px" />
                                     <field name="date_prevue" width="200px" />
+                                    <field name="lien_rapport" width="300px" widget="url" />
                                     <field name="date_reelle" width="200px" />
                                 </list>
                             </field>

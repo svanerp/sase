@@ -17,6 +17,7 @@
         "views/views_situation.xml",
         "views/views_service.xml",
         "views/views_intervenant.xml",
+        "views/views_rapport.xml",
         "data/cron_report_due.xml",
     ],
     "demo": [

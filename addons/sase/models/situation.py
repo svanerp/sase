@@ -142,6 +142,7 @@ class Situation(models.Model):
         inverse_name="situation_id",
         string="Rapports",
         help="Rapports associés à cette situation.",
+        context={"active_test": False},
     )
 
     @api.model
@@ -182,7 +183,6 @@ class Situation(models.Model):
                 existing_reports = self.env["sase.rapport"].search(
                     [
                         ("situation_id", "=", record.id),
-                        ("nom", "in", [f"Rapport {month}ème mois" for month in report_duedates]),
                     ]
                 )
                 if existing_reports:
@@ -190,19 +190,20 @@ class Situation(models.Model):
 
                 # Create new reports
                 for month in report_duedates:
-                    vals = {
-                        "nom": f"Rapport {month}ème mois",
-                        "date_prevue": record.date_officialisation + relativedelta(months=month),
-                        "situation_id": record.id,
-                    }
-                    _logger.info("Creating report with values: %s", vals)
-                    self.env["sase.rapport"].create(vals)
+                    for enfant in record.enfant_ids:
+                        vals = {
+                            "nom": f"Rapport {month}ème mois",
+                            "date_prevue": record.date_officialisation + relativedelta(months=month),
+                            "situation_id": record.id,
+                            "enfant_id": enfant.id,
+                        }
+                        _logger.info("Creating report with values: %s", vals)
+                        self.env["sase.rapport"].create(vals)
             else:
                 # If date_officialisation is cleared, remove all reports
                 existing_reports = self.env["sase.rapport"].search(
                     [
                         ("situation_id", "=", record.id),
-                        ("nom", "in", [f"Rapport {month}ème mois" for month in report_duedates]),
                     ]
                 )
                 if existing_reports:

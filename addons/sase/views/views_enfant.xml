@@ -40,6 +40,17 @@
                                 </list>
                             </field>
                         </page>
+                        <page string="Rapports">
+                            <field name="rapport_ids" options="{'create': False, 'delete': False}" string="">
+                                <list>
+                                    <field name="situation_id" />
+                                    <field name="nom" />
+                                    <field name="date_prevue" />
+                                    <field name="lien_rapport" widget="url" />
+                                    <field name="date_reelle" />
+                                </list>
+                            </field>
+                        </page>
                     </notebook>
                 </sheet>
             </form>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <!-- LIST VIEW -->
+    <record id="view_list_rapport" model="ir.ui.view">
+        <field name="name">sase.rapport.list</field>
+        <field name="model">sase.rapport</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="situation_id" />
+                <field name="enfant_id" />
+                <field name="nom" />
+                <field name="date_prevue" width="200px" />
+                <field name="date_reelle" width="200px" />
+            </list>
+        </field>
+    </record>
+
+    <!-- SEARCH VIEW -->
+    <record id="view_search_rapport" model="ir.ui.view">
+        <field name="name">sase.rapport.search</field>
+        <field name="model">sase.rapport</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="active_and_inactive" string="Tous" domain="[('active', 'in', [True, False])]" />
+            </search>
+        </field>
+    </record>
+
+</odoo>

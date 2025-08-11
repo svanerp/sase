@@ -50,6 +50,12 @@ class Enfant(models.Model):
         compute="_compute_dossier",
         store=True,
     )
+    rapport_ids = fields.One2many(
+        comodel_name="sase.rapport",
+        inverse_name="enfant_id",
+        string="Rapports",
+        context={"active_test": False},
+    )
 
     @api.depends("date_naissance")
     def _compute_age(self):
