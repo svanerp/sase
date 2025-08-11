@@ -41,8 +41,8 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-      carbone:
-        condition: service_started
+      # carbone:
+      #   condition: service_started
     restart: always
 
   postgres:
@@ -70,13 +70,13 @@ services:
       - 8070:80
 
   # Add the
-  carbone:
-    container_name: carbone_sase
-    image: harbor.imio.be/docker-hub/carbone/carbone-ee:4.22.5
-    ports:
-      - 4000:4000
-    env_file:
-      - .env # Vérifier que CARBONE_EE_STUDIO=true (en plus de la clé de licence)
+  # carbone:
+  #   container_name: carbone_sase
+  #   image: harbor.imio.be/docker-hub/carbone/carbone-ee:4.22.5
+  #   ports:
+  #     - 4000:4000
+  #   env_file:
+  #     - .env # Vérifier que CARBONE_EE_STUDIO=true (en plus de la clé de licence)
 
 volumes:
   postgres-volume:

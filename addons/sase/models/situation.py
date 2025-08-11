@@ -66,10 +66,40 @@ class Situation(models.Model):
         domain="[('is_directeur', '=', False)]",
     )
     equivalent_situation = fields.Integer(
-        string="Equivalent PC",
+        string="PC (équivalent)",
         compute="_compute_equivalent_situation",
         store=True,
         help="Nombre d'équivalents PC pour cette situation en fonction du nombre d'enfants.",
+    )
+    notes = fields.Html(
+        string="Notes",
+        help="Notes supplémentaires concernant cette situation.",
+    )
+    latence = fields.Integer(
+        string="Latence",
+        compute="_compute_latence",
+        help="Nombre de jours entre la notification et l'officialisation/annulation",
+    )
+    is_report_due = fields.Boolean(
+        string="Rapport dû",
+        compute="_compute_report_due",
+        store=True,
+    )
+    intervant_principal_id = fields.Many2one(
+        comodel_name="sase.intervenant",
+        string="Intervenant Principal",
+        help="Intervenant principal associé à cette situation.",
+    )
+    intervenant_secondaire_id = fields.Many2one(
+        comodel_name="sase.intervenant",
+        string="Intervenant Secondaire",
+        help="Intervenant secondaire associé à cette situation.",
+    )
+    intervenant_ids = fields.Many2many(
+        comodel_name="sase.intervenant",
+        string="Intervenants",
+        compute="_compute_intervenants",
+        store=True,
     )
     # Dates
     date_notification = fields.Date(
@@ -114,25 +144,23 @@ class Situation(models.Model):
         help="Rapports associés à cette situation.",
     )
 
-    notes = fields.Html(
-        string="Notes",
-        help="Notes supplémentaires concernant cette situation.",
-    )
-    latence = fields.Integer(
-        string="Latence",
-        compute="_compute_latence",
-        help="Nombre de jours entre la notification et l'officialisation/annulation",
-    )
-    is_report_due = fields.Boolean(
-        string="Rapport dû",
-        compute="_compute_report_due",
-        store=True,
-    )
+    @api.model
+    def create(self, vals):
+        record = super(Situation, self).create(vals)
+        _logger.info("Creating situation with values: %s", vals)
+        if "service_id" in vals or "enfant_ids" in vals:
+            record.service_id.compute_nb_places()
+
+        # Handle report creation/update when date_officialisation changes
+        if "date_officialisation" in vals:
+            record._update_reports()
+        return record
 
     def write(self, vals):
+        _logger.info("Updating situation with values: %s", vals)
         res = super(Situation, self).write(vals)
-        if "service_id" in vals:
-            self.service_id.compute_nb_places_occupees()
+        if "service_id" in vals or "enfant_ids" in vals:
+            self.service_id.compute_nb_places()
 
         # Handle report creation/update when date_officialisation changes
         if "date_officialisation" in vals:
@@ -140,6 +168,12 @@ class Situation(models.Model):
 
         return res
 
+    @api.depends("intervant_principal_id", "intervenant_secondaire_id")
+    def _compute_intervenants(self):
+        for record in self:
+            record.intervenant_ids = record.intervant_principal_id | record.intervenant_secondaire_id
+
+    @api.depends("date_officialisation")
     def _update_reports(self):
         """Helper method to update reports based on date_officialisation"""
         for record in self:
@@ -200,12 +234,12 @@ class Situation(models.Model):
             record.state = "draft"
             if record.date_officialisation and record.date_officialisation <= fields.Date.context_today(self):
                 record.state = "running"
-            if record.date_sortie:
+            if record.date_sortie and record.date_sortie <= fields.Date.context_today(self):
                 record.state = "done"
             if record.date_annulation:
                 record.state = "cancelled"
 
-            self.env["sase.service"].compute_nb_places_occupees()
+            self.env["sase.service"].compute_nb_places()
 
     def cancel(self):
         self.ensure_one()
@@ -232,6 +266,12 @@ class Situation(models.Model):
     def _compute_enfants_nb(self):
         for record in self:
             record.enfant_nb = len(record.enfant_ids)
+
+    @api.depends("service_id", "enfant_ids", "date_fin")
+    def _recompute_nb_places(self):
+        for record in self:
+            if record.service_id:
+                record.service_id.compute_nb_places()
 
     @api.depends("nom", "date_officialisation", "date_fin")
     def _compute_display_name(self):

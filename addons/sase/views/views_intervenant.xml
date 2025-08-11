@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <!-- LIST VIEW -->
+    <record id="view_list_intervenant" model="ir.ui.view">
+        <field name="name">sase.intervenant.list</field>
+        <field name="model">sase.intervenant</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="nom" />
+                <field name="prenom" />
+                <field name="nb_situation_principal" width="250px;" />
+                <field name="nb_situation_secondaire" width="250px;" />
+                <field name="total_pc" width="200px;" string="Somme des prises en charges" />
+                <field name="taux_occupation" widget="progressbar" />
+            </list>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_form_intervenant" model="ir.ui.view">
+        <field name="name">sase.intervenant.form</field>
+        <field name="model">sase.intervenant</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="nom" />
+                            <field name="prenom" />
+                        </group>
+                        <group>
+                            <field name="temps_travail" />
+                            <field name="taux_occupation" widget="progressbar" />
+                        </group>
+                    </group>
+                    <group>
+                        <field name="situation_principal_ids" widget="many2many_list" options="{'create': False,'delete':False}" domain="[('state', 'in', ['running', 'draft'])]" />
+                        <field name="situation_secondaire_ids" widget="many2many_list" options="{'create': False,'delete':False}" string="Situations en co-intervention" domain="[('state', 'in', ['running', 'draft'])]" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

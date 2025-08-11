@@ -16,9 +16,11 @@
         "views/views_enfant.xml",
         "views/views_situation.xml",
         "views/views_service.xml",
+        "views/views_intervenant.xml",
         "data/cron_report_due.xml",
     ],
     "demo": [
+        "demo/sase.intervenant.csv",
         "demo/sase.service.csv",
         "demo/sase.service_employe.csv",
         "demo/sase.enfant.csv",

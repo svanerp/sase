@@ -29,3 +29,5 @@ __pycache__/
 coverage_html_report/
 
 *.class
+
+extra-addons/

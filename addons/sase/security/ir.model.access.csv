@@ -4,4 +4,4 @@ access_sase_situation,access_sase_situation,model_sase_situation,base.group_user
 access_sase_service,access_sase_service,model_sase_service,base.group_user,1,1,1,1
 access_sase_service_employe,access_sase_service_employe,model_sase_service_employe,base.group_user,1,1,1,1
 access_sase_rapport,access_sase_rapport,model_sase_rapport,base.group_user,1,1,1,1
-
+access_sase_intervenant,access_sase_intervenant,model_sase_intervenant,base.group_user,1,1,1,1

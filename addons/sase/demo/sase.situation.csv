@@ -1,4 +1,10 @@
 id,nom,description,service_id:id
-situation_demo_1,Situation A,Description for situation A,service_saj_AAA
-situation_demo_2,Situation B,Description for situation B,service_saj_AAA
-situation_demo_3,Situation C,Description for situation C,service_saj_AAA
+situation_demo_1,Famille Alpha,Description for situation A,service_saj_AAA
+situation_demo_2,Famille Beta,Description for situation B,service_saj_AAA
+situation_demo_3,Famille Gamma,Description for situation C,service_saj_AAA
+situation_demo_4,Famille Delta,Description for situation D,service_saj_AAA
+situation_demo_5,Famille Epsilon,Description for situation E,service_saj_AAA
+situation_demo_6,Famille Zeta,Description for situation F,service_saj_AAA
+situation_demo_7,Famille Eta,Description for situation G,service_saj_AAA
+situation_demo_8,Famille Theta,Description for situation H,service_saj_AAA
+

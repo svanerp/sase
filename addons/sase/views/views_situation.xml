@@ -7,15 +7,18 @@
         <field name="model">sase.situation</field>
         <field name="arch" type="xml">
             <list decoration-danger="state in ('cancelled')" decoration-success="state in ('done')" decoration-warning="state in ('draft')">
-                <field name="state" />
-                <field name="service_id" />
-                <field name="latence" />
-                <field name="date_officialisation" />
+                <field name="state" width="100px" />
                 <field name="nom" />
-                <field name="equivalent_situation" />
-                <field name="nb_jours" />
+
+                <field name="service_id" />
+                <field name="date_officialisation" width="200px" />
+                <field name="nb_jours" width="220px" />
+
+                <field name="equivalent_situation" sum="Total" width="130px" />
+                <field name="intervant_principal_id" />
+                <field name="intervenant_secondaire_id" />
+
                 <field name="date_fin" />
-                <field name="is_report_due" />
             </list>
         </field>
     </record>
@@ -34,16 +37,23 @@
                     <widget name="web_ribbon" title="Annulé" bg_color="bg-danger" invisible="state != 'cancelled'" />
                     <widget name="web_ribbon" title="Admission" bg_color="bg-warning" invisible="state != 'draft'" />
 
+
                     <group>
-                        <field name="nom" />
+                        <group>
+                            <field name="nom" />
+                            <field name="enfant_ids" widget="many2many_tags" options="{'create': False}" />
+                            <field name="equivalent_situation" />
+                            <field name="date_officialisation" />
+                            <field name="date_fin" />
+                            <field name="nb_jours" />
+                            <field name="latence" />
 
-                        <field name="enfant_ids" widget="many2many_tags" options="{'create': False}" />
-                        <field name="equivalent_situation" />
+                        </group>
+                        <group>
+                            <field name="intervant_principal_id" />
+                            <field name="intervenant_secondaire_id" />
 
-                        <field name="date_officialisation" />
-                        <field name="date_fin" />
-                        <field name="nb_jours" />
-                        <field name="latence" />
+                        </group>
                     </group>
                     <notebook>
                         <page string="Dates">
@@ -69,9 +79,9 @@
                         <page string="Rapports">
                             <field name="report_ids" widget="one2many_list" options="{'create': False, 'delete': False}">
                                 <list editable="bottom">
-                                    <field name="nom" />
-                                    <field name="date_prevue" />
-                                    <field name="date_reelle" />
+                                    <field name="nom" width="300px" />
+                                    <field name="date_prevue" width="200px" />
+                                    <field name="date_reelle" width="200px" />
                                 </list>
                             </field>
                         </page>
@@ -86,8 +96,9 @@
         <field name="name">sase.situation.search</field>
         <field name="model">sase.situation</field>
         <field name="arch" type="xml">
-            <search string="SSS">
+            <search>
                 <group expand="1" string="Group By">
+                    <filter name="intervenant_ids" string="Intervenant" context="{'group_by': 'intervenant_ids'}" />
                     <filter name="service_id" string="Service" context="{'group_by': 'service_id'}" />
                     <filter name="service_mandant" string="Mandant" context="{'group_by': 'service_mandant'}" />
                     <filter name="service_delegue" string="Délégué" context="{'group_by': 'service_delegue'}" />
