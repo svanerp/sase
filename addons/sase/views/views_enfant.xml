@@ -10,7 +10,7 @@
                 <field name="date_naissance" />
                 <field name="age" />
                 <field name="genre" />
-                <field name="situation_ids" />
+                <field name="situation_ids" widget="many2many_tags" options="{'no_create': True}" />
             </list>
         </field>
     </record>
@@ -22,16 +22,22 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="nom" />
-                        <field name="prenom" />
-                        <field name="date_naissance" />
-                        <field name="age" />
-                        <field name="genre" />
-                        <field name="notes" />
+                        <group>
+                            <field name="nom" />
+                            <field name="prenom" />
+                            <field name="date_naissance" />
+                            <field name="age" />
+                            <field name="genre" />
+
+                        </group>
+                        <group>
+                            <field name="notes" />
+                        </group>
+
                     </group>
                     <notebook>
                         <page string="Dossiers">
-                            <field name="situation_ids" options="{'create': False}" string="">
+                            <field name="situation_ids" options="{'create': False, 'delete': False}" string="" readonly="1">
                                 <list>
                                     <field name="date_officialisation" />
                                     <field name="date_fin" />
@@ -42,12 +48,12 @@
                         </page>
                         <page string="Rapports">
                             <field name="rapport_ids" options="{'create': False, 'delete': False}" string="">
-                                <list>
+                                <list editable="bottom">
                                     <field name="situation_id" />
                                     <field name="nom" />
-                                    <field name="date_prevue" />
+                                    <field name="date_prevue" width="200px" />
                                     <field name="lien_rapport" widget="url" />
-                                    <field name="date_reelle" />
+                                    <field name="date_reelle" width="200px" />
                                 </list>
                             </field>
                         </page>

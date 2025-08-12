@@ -6,12 +6,15 @@
         <field name="name">sase.rapport.list</field>
         <field name="model">sase.rapport</field>
         <field name="arch" type="xml">
-            <list>
+            <list decoration-danger="date_prevue &lt; current_date and not date_reelle" decoration-success="date_reelle">
                 <field name="situation_id" />
                 <field name="enfant_id" />
                 <field name="nom" />
                 <field name="date_prevue" width="200px" />
                 <field name="date_reelle" width="200px" />
+                <field name="intervenants_ids" widget="many2many_tags" options="{'no_create': True}" string="Intervenants" />
+                <field name="lien_rapport" widget="url" optional="hide" />
+
             </list>
         </field>
     </record>
@@ -23,6 +26,10 @@
         <field name="arch" type="xml">
             <search>
                 <filter name="active_and_inactive" string="Tous" domain="[('active', 'in', [True, False])]" />
+                <filter name="situation_id" string="Situation" context="{'group_by': 'situation_id'}" />
+                <filter name="enfant_id" string="Enfant" context="{'group_by': 'enfant_id'}" />
+                <filter name="intervenants_ids" string="Intervenants" context="{'group_by': 'intervenants_ids'}" />
+
             </search>
         </field>
     </record>

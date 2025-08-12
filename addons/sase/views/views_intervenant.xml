@@ -34,6 +34,18 @@
                         </group>
                     </group>
                     <group>
+                        <field name="rapport_ids" widget="many2many_list" options="{'create': False,'delete':False}" string="Rapports">
+                            <list>
+                                <field name="situation_id" />
+                                <field name="enfant_id" />
+                                <field name="nom" />
+                                <field name="date_prevue" width="200px" />
+                                <field name="date_reelle" width="200px" />
+                                <field name="lien_rapport" widget="url" />
+                            </list>
+                        </field>
+                    </group>
+                    <group>
                         <field name="situation_principal_ids" widget="many2many_list" options="{'create': False,'delete':False}" domain="[('state', 'in', ['running', 'draft'])]" />
                         <field name="situation_secondaire_ids" widget="many2many_list" options="{'create': False,'delete':False}" string="Situations en co-intervention" domain="[('state', 'in', ['running', 'draft'])]" />
                     </group>
