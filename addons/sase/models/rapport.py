@@ -7,6 +7,7 @@ class Rapport(models.Model):
     _name = "sase.rapport"
     _description = "Rapport"
     _rec_name = "nom"
+    order = "date_prevue asc"
 
     nom = fields.Char(string="Nom", required=True)
     date_prevue = fields.Date(
@@ -41,6 +42,12 @@ class Rapport(models.Model):
         store=True,
         default=True,
         help="Indique si le rapport est actif ou non.",
+    )
+    intervenants_ids = fields.Many2many(
+        comodel_name="sase.intervenant",
+        related="situation_id.intervenant_ids",
+        string="Intervenants",
+        help="Intervenants associés à ce rapport.",
     )
 
     @api.depends("date_reelle")

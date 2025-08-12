@@ -80,6 +80,16 @@ class Intervenant(models.Model):
         store=True,
         help="Nombre d'enfants associés à l'intervenant.",
     )
+    rapport_ids = fields.One2many(
+        comodel_name="sase.rapport",
+        compute="_compute_rapport_ids",
+        string="Rapports",
+        help="Rapports associés à cet intervenant.",
+    )
+
+    def _compute_rapport_ids(self):
+        for record in self:
+            record.rapport_ids = self.env["sase.rapport"].search([("intervenants_ids", "in", record.id)])
 
     @api.depends(
         "situation_principal_ids",
