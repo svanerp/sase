@@ -106,6 +106,7 @@
                     <filter name="service_delegue" string="Délégué" context="{'group_by': 'service_delegue'}" />
                     <separator />
                     <filter name="state" string="Etat" context="{'group_by': 'state'}" />
+                    <filter name="active_and_inactive" string="Tous" domain="[('active', 'in', [True, False])]" />
 
                 </group>
             </search>

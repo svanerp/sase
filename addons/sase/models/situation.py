@@ -144,6 +144,10 @@ class Situation(models.Model):
         help="Rapports associés à cette situation.",
         context={"active_test": False},
     )
+    active = fields.Boolean(
+        string="Actif",
+        default=True,
+    )
 
     @api.model
     def create(self, vals):
@@ -174,7 +178,7 @@ class Situation(models.Model):
         for record in self:
             record.intervenant_ids = record.intervant_principal_id | record.intervenant_secondaire_id
 
-    @api.depends("date_officialisation")
+    @api.depends("date_officialisation", "intervenant_ids")
     def _update_reports(self):
         """Helper method to update reports based on date_officialisation"""
         for record in self:
@@ -237,8 +241,10 @@ class Situation(models.Model):
                 record.state = "running"
             if record.date_sortie and record.date_sortie <= fields.Date.context_today(self):
                 record.state = "done"
+                record.active = False
             if record.date_annulation:
                 record.state = "cancelled"
+                record.active = False
 
             self.env["sase.service"].compute_nb_places()
 

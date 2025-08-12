@@ -34,6 +34,9 @@
                             </list>
                         </field>
                         <field name="nb_places_allouees" />
+                        <field name="situation_ids" widget="many2many_list" options="{'create': False,'delete':False}" string="Situations">
+
+                        </field>
                     </group>
 
                 </sheet>

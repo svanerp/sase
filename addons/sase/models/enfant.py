@@ -17,6 +17,7 @@ class Enfant(models.Model):
             "La combinaison de nom, prénom et date de naissance doit être unique.",
         ),
     ]
+    order = "nom asc, prenom asc, date_naissance asc"
     nom = fields.Char(string="Nom", required=True)
     prenom = fields.Char(string="Prénom", required=True)
     date_naissance = fields.Date(string="Date de Naissance", required=True)
@@ -24,6 +25,7 @@ class Enfant(models.Model):
         selection=[
             ("male", "Masculin"),
             ("female", "Féminin"),
+            ("other", "Non binaire"),
         ],
         string="Genre",
         required=True,

@@ -31,13 +31,19 @@ class Service(models.Model):
     )
     nb_places_reservees = fields.Integer(
         string="Nombre de PC réservées",
-        compute="_compute_nb_places_reservees",
+        compute="_compute_nb_places",
         store=True,
         help="Nombre de PC réservées pour ce service.",
     )
     delta_nb_places = fields.Integer(
         string="Delta nombre de PC",
         help="Delta entre le nombre de PC allouées et le nombre de PC occupées.",
+    )
+    situation_ids = fields.One2many(
+        comodel_name="sase.situation",
+        inverse_name="service_id",
+        string="Situations",
+        help="Situations associées à ce service.",
     )
 
     # def _compute_delta_nb_places(self):
