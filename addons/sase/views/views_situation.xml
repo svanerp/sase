@@ -36,8 +36,6 @@
                     <widget name="web_ribbon" title="Terminé" bg_color="bg-success" invisible="state != 'done'" />
                     <widget name="web_ribbon" title="Annulé" bg_color="bg-danger" invisible="state != 'cancelled'" />
                     <widget name="web_ribbon" title="Admission" bg_color="bg-warning" invisible="state != 'draft'" />
-
-
                     <group>
                         <group>
                             <field name="nom" />
@@ -58,14 +56,18 @@
                     <notebook>
                         <page string="Dates">
                             <group>
-                                <field name="date_notification" />
-                                <field name="date_reservation" />
-                                <field name="date_ep1" />
-                                <field name="date_ep2" />
-                                <field name="date_ep3" />
-                                <field name="date_officialisation" />
-                                <field name="date_sortie" />
-                                <field name="date_annulation" />
+                                <group>
+                                    <field name="date_notification" />
+                                    <field name="date_reservation" />
+                                    <field name="date_ep1" />
+                                    <field name="date_ep2" />
+                                    <field name="date_ep3" />
+                                    <field name="date_officialisation" />
+                                </group>
+                                <group>
+                                    <field name="date_sortie" />
+                                    <field name="date_annulation" />
+                                </group>
                             </group>
                         </page>
                         <page string="Mandant">
@@ -77,7 +79,7 @@
                             </group>
                         </page>
                         <page string="Rapports">
-                            <field name="report_ids" widget="one2many_list" options="{'create': False, 'delete': False}">
+                            <field name="report_ids" widget="one2many_list" options="{'create': False}">
                                 <list editable="bottom">
                                     <field name="enfant_id" width="300px" />
                                     <field name="nom" width="300px" />

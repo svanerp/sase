@@ -264,8 +264,6 @@ class Situation(models.Model):
                 record.nb_jours = (record.date_fin - record.date_officialisation).days + 1
             elif record.date_officialisation:
                 record.nb_jours = (datetime.date.today() - record.date_officialisation).days + 1
-            elif record.date_notification:
-                record.nb_jours = (datetime.date.today() - record.date_notification).days + 1
             else:
                 record.nb_jours = 0
 
@@ -295,17 +293,3 @@ class Situation(models.Model):
     def _compute_equivalent_situation(self):
         for record in self:
             record.equivalent_situation = math.ceil(len(record.enfant_ids) / 3) if record.enfant_ids else 0
-
-    # @api.model
-    # def _compute_report_due(self):
-    #     """Check if the report is due based on the current date."""
-    #     _logger.info("compute_report_due called")
-    #     today = fields.Date.context_today(self)
-    #     for record in self:
-    #         record.is_report_due = (
-    #             record.date_rapport_3_mois <= today
-    #             or record.date_rapport_6_mois - relativedelta(months=1) <= today
-    #             or record.date_rapport_12_mois - relativedelta(months=1) <= today
-    #             or record.date_rapport_18_mois - relativedelta(months=1) <= today
-    #             or record.date_rapport_24_mois - relativedelta(months=1) <= today
-    #         )

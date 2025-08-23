@@ -1,23 +1,13 @@
 <odoo>
-    <!-- <record id="sase.menu_sase" model="ir.ui.menu">
-        <field name="sequence">10</field>
-        <field name="description">Visualisez, gérez et administrez le Plan stratégique transversal (PST) de votre Pouvoir Local, ses objectifs et ses projets.</field>
-    </record> -->
-
     <record id="action_window_sase_enfant_all" model="ir.actions.act_window">
         <field name="res_model">sase.enfant</field>
         <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_situation_ids': 1}</field>
     </record>
     <record id="action_window_sase_situation_all" model="ir.actions.act_window">
         <field name="res_model">sase.situation</field>
         <field name="view_mode">list,form</field>
     </record>
-    <!-- <record id="action_window_sase_situation_running" model="ir.actions.act_window">
-        <field name="res_model">sase.situation</field>
-        <field name="view_mode">list,form</field>
-        <field name="domain">[('state', 'in', ['running','draft'])]</field>
-        <field name="name">Situations en cours</field>
-    </record> -->
     <record id="action_window_sase_service_all" model="ir.actions.act_window">
         <field name="res_model">sase.service</field>
         <field name="view_mode">list,form</field>

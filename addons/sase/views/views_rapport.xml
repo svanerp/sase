@@ -14,7 +14,6 @@
                 <field name="date_reelle" width="200px" />
                 <field name="intervenants_ids" widget="many2many_tags" options="{'no_create': True}" string="Intervenants" />
                 <field name="lien_rapport" widget="url" optional="hide" />
-
             </list>
         </field>
     </record>

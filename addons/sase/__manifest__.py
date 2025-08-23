@@ -18,7 +18,7 @@
         "views/views_service.xml",
         "views/views_intervenant.xml",
         "views/views_rapport.xml",
-        "data/cron_report_due.xml",
+        "data/res.users.csv",
     ],
     "demo": [
         "demo/sase.intervenant.csv",

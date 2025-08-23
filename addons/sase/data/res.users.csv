@@ -1,0 +1,4 @@
+id,name,email,login,password
+user_admin_local,admin_local,admin_local@sase.be,admin_local,admin_local
+user_coordinateur,coordinateur,coordinateur@sase.be,coordinateur,coordinateur
+user_intervenant,intervenant,intervenant@sase.be,intervenant,intervenant

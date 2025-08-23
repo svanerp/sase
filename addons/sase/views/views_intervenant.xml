@@ -35,7 +35,7 @@
                     </group>
                     <group>
                         <field name="rapport_ids" widget="many2many_list" options="{'create': False,'delete':False}" string="Rapports">
-                            <list>
+                            <list decoration-danger="date_prevue &lt; current_date and not date_reelle" decoration-success="date_reelle">
                                 <field name="situation_id" />
                                 <field name="enfant_id" />
                                 <field name="nom" />

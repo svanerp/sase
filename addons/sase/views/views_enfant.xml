@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <odoo>
+    <!-- LIST VIEW -->
     <record id="view_list_enfant" model="ir.ui.view">
         <field name="name">sase.enfant.list</field>
         <field name="model">sase.enfant</field>
@@ -15,6 +16,7 @@
         </field>
     </record>
 
+    <!-- FORM VIEW -->
     <record id="view_form_enfant" model="ir.ui.view">
         <field name="name">sase.enfant.form</field>
         <field name="model">sase.enfant</field>
@@ -39,10 +41,10 @@
                         <page string="Dossiers">
                             <field name="situation_ids" options="{'create': False, 'delete': False}" string="" readonly="1">
                                 <list>
-                                    <field name="date_officialisation" />
-                                    <field name="date_fin" />
-                                    <field name="nom" />
-                                    <field name="state" />
+                                    <field name="date_officialisation" width="50px" />
+                                    <field name="date_fin" width="50px" />
+                                    <field name="nom" width="200px" />
+                                    <field name="state" width="50px" />
                                 </list>
                             </field>
                         </page>
@@ -60,6 +62,17 @@
                     </notebook>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <!-- SEARCH VIEW -->
+    <record id="view_search_enfant" model="ir.ui.view">
+        <field name="name">sase.enfant.search</field>
+        <field name="model">sase.enfant</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="situation_ids" string="Situation en cours" domain="[('situation_ids.state', 'in', ['draft','running'])]" />
+            </search>
         </field>
     </record>
 </odoo>

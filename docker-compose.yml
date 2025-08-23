@@ -47,7 +47,7 @@ services:
 
   postgres:
     container_name: postgres_sase
-    image: harbor.imio.be/docker-hub/library/postgres:15
+    image: postgres:17
     ports:
       - 5532:5432
     environment:
@@ -65,7 +65,7 @@ services:
 
   smtp4dev:
     container_name: smtp4dev
-    image: harbor.imio.be/docker-hub/rnwood/smtp4dev
+    image: rnwood/smtp4dev
     ports:
       - 8070:80
 
