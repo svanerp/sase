@@ -15,10 +15,11 @@
                 <field name="nb_jours" width="220px" />
 
                 <field name="equivalent_situation" sum="Total" width="130px" />
-                <field name="intervant_principal_id" />
+                <field name="intervenant_principal_id" />
                 <field name="intervenant_secondaire_id" />
 
                 <field name="date_fin" />
+                <field name="latence" optional="hide" />
             </list>
         </field>
     </record>
@@ -48,7 +49,7 @@
 
                         </group>
                         <group>
-                            <field name="intervant_principal_id" />
+                            <field name="intervenant_principal_id" />
                             <field name="intervenant_secondaire_id" />
 
                         </group>
@@ -73,19 +74,18 @@
                         <page string="Mandant">
                             <group>
                                 <field name="service_id" />
-                                <field name="service_mandant" domain="[('is_directeur', '=', True),('service_id','=', service_id)]" />
-                                <field name="service_delegue" domain="[('is_directeur', '=', False),('service_id','=', service_id)]" />
-
+                                <field name="service_mandant" domain="[('qualite', '=', 'directrice'),('service_id','=', service_id)]" />
+                                <field name="service_delegue" domain="[('qualite', '!=', 'directrice'),('service_id','=', service_id)]" />
                             </group>
                         </page>
                         <page string="Rapports">
                             <field name="report_ids" widget="one2many_list" options="{'create': False}">
-                                <list editable="bottom">
+                                <list decoration-danger="date_prevue &lt; current_date and not date_reelle" decoration-success="date_reelle" editable="bottom">
                                     <field name="enfant_id" width="300px" />
                                     <field name="nom" width="300px" />
                                     <field name="date_prevue" width="200px" />
-                                    <field name="lien_rapport" width="300px" widget="url" />
                                     <field name="date_reelle" width="200px" />
+                                    <field name="lien_rapport" width="300px" widget="url" />
                                 </list>
                             </field>
                         </page>
@@ -101,15 +101,16 @@
         <field name="model">sase.situation</field>
         <field name="arch" type="xml">
             <search>
+                <field name="nom" string="Nom" />
+                <field name="enfant_ids" string="Enfant" />
                 <group expand="1" string="Group By">
                     <filter name="intervenant_ids" string="Intervenant" context="{'group_by': 'intervenant_ids'}" />
-                    <filter name="service_id" string="Service" context="{'group_by': 'service_id'}" />
+                    <filter name="service_id" string="Service mandant" context="{'group_by': 'service_id'}" />
                     <filter name="service_mandant" string="Mandant" context="{'group_by': 'service_mandant'}" />
                     <filter name="service_delegue" string="Délégué" context="{'group_by': 'service_delegue'}" />
                     <separator />
                     <filter name="state" string="Etat" context="{'group_by': 'state'}" />
                     <filter name="active_and_inactive" string="Tous" domain="[('active', 'in', [True, False])]" />
-
                 </group>
             </search>
         </field>

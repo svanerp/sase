@@ -1,0 +1,775 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sase
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20250819\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-27 13:30+0000\n"
+"PO-Revision-Date: 2025-08-27 15:32+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.7\n"
+
+#. module: sase
+#: model:ir.model.fields.selection,name:sase.selection__sase_intervenant__temps_travail__4_5
+msgid "4/5ème temps"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields.selection,name:sase.selection__sase_intervenant__temps_travail__9_10
+msgid "9/10ème temps"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields.selection,name:sase.selection__sase_intervenant__temps_travail__absence
+msgid "Absence longue durée"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_rapport__active
+#: model:ir.model.fields,field_description:sase.field_sase_situation__active
+msgid "Actif"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields.selection,name:sase.selection__sase_situation__state__draft
+#: model_terms:ir.ui.view,arch_db:sase.view_form_situation
+msgid "Admission"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields.selection,name:sase.selection__sase_situation__state__cancelled
+#: model_terms:ir.ui.view,arch_db:sase.view_form_situation
+msgid "Annulé"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_intervenant__total_pc
+msgid "Charge PC totale de l'intervenant."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__intervenant_secondaire_id
+msgid "Co-intervenant"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_situation__intervenant_secondaire_id
+msgid "Co-intervenant associé à cette situation."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields.selection,name:sase.selection__sase_service_employe__qualite__conseiller
+msgid "Conseiller.ère"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_enfant__create_uid
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__create_uid
+#: model:ir.model.fields,field_description:sase.field_sase_rapport__create_uid
+#: model:ir.model.fields,field_description:sase.field_sase_service__create_uid
+#: model:ir.model.fields,field_description:sase.field_sase_service_employe__create_uid
+#: model:ir.model.fields,field_description:sase.field_sase_situation__create_uid
+#: model:ir.model.fields,field_description:sase.field_sase_situation_stats__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_enfant__create_date
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__create_date
+#: model:ir.model.fields,field_description:sase.field_sase_rapport__create_date
+#: model:ir.model.fields,field_description:sase.field_sase_service__create_date
+#: model:ir.model.fields,field_description:sase.field_sase_service_employe__create_date
+#: model:ir.model.fields,field_description:sase.field_sase_situation__create_date
+#: model:ir.model.fields,field_description:sase.field_sase_situation_stats__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__date_ep1
+msgid "Date EP1"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__date_ep2
+msgid "Date EP2"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__date_ep3
+msgid "Date EP3"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__date_annulation
+msgid "Date d'annulation"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_rapport__date_reelle
+msgid "Date d'envoi"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__date_officialisation
+msgid "Date d'officialisation"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_enfant__date_naissance
+msgid "Date de Naissance"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__date_fin
+msgid "Date de fin"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_situation__date_ep1
+msgid "Date de l'EP1 (Entretien Préliminaire 1)."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_situation__date_ep2
+msgid "Date de l'EP2 (Entretien Préliminaire 2)."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_situation__date_ep3
+msgid "Date de l'EP3 (Entretien Préliminaire 3)."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__date_notification
+msgid "Date de notification"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__date_reservation
+msgid "Date de réservation"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__date_sortie
+msgid "Date de sortie"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_rapport__date_prevue
+msgid "Date prévue"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_rapport__date_prevue
+msgid "Date prévues pour le rapport."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_situation__date_fin
+#: model:ir.model.fields,help:sase.field_sase_situation__date_sortie
+msgid "Date à laquelle la situation a pris fin."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_situation__date_annulation
+msgid "Date à laquelle la situation a été annulée."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_situation__date_notification
+msgid ""
+"Date à laquelle la situation a été notifiée comme disponible au mandant."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_situation__date_officialisation
+msgid "Date à laquelle la situation a été officialisé."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_situation__date_reservation
+msgid "Date à laquelle la situation a été réservée par le mandant."
+msgstr ""
+
+#. module: sase
+#: model_terms:ir.ui.view,arch_db:sase.view_form_situation
+msgid "Dates"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_service__delta_nb_places
+msgid "Delta entre le nombre de PC allouées et le nombre de PC occupées."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_service__delta_nb_places
+msgid "Delta nombre de PC"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__description
+msgid "Description"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields.selection,name:sase.selection__sase_service_employe__qualite__directrice
+msgid "Directeur.ice"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_enfant__display_name
+#: model:ir.model.fields,field_description:sase.field_sase_rapport__display_name
+#: model:ir.model.fields,field_description:sase.field_sase_service__display_name
+#: model:ir.model.fields,field_description:sase.field_sase_service_employe__display_name
+#: model:ir.model.fields,field_description:sase.field_sase_situation__display_name
+#: model:ir.model.fields,field_description:sase.field_sase_situation_stats__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_enfant__is_dossier
+msgid "Dossier"
+msgstr ""
+
+#. module: sase
+#: model_terms:ir.ui.view,arch_db:sase.view_form_enfant
+msgid "Dossiers"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__service_delegue
+#: model_terms:ir.ui.view,arch_db:sase.view_search_situation
+msgid "Délégué"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields.selection,name:sase.selection__sase_service_employe__qualite__delegue
+msgid "Délégué.e"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__email
+#: model:ir.model.fields,field_description:sase.field_sase_service_employe__email
+msgid "Email"
+msgstr ""
+
+#. module: sase
+#: model:ir.model,name:sase.model_sase_service_employe
+msgid "Employés du Service"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields.selection,name:sase.selection__sase_situation__state__running
+msgid "En cours"
+msgstr ""
+
+#. module: sase
+#: model:ir.actions.act_window,name:sase.action_window_sase_enfant_all
+#: model:ir.model,name:sase.model_sase_enfant
+#: model:ir.model.fields,field_description:sase.field_sase_rapport__enfant_id
+#: model_terms:ir.ui.view,arch_db:sase.view_search_rapport
+#: model_terms:ir.ui.view,arch_db:sase.view_search_situation
+msgid "Enfant"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_rapport__enfant_id
+msgid "Enfant concerné par ce rapport."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__enfant_ids
+#: model:ir.ui.menu,name:sase.menu_sase_enfant
+msgid "Enfants"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_situation__enfant_ids
+msgid "Enfants associés à cette situation."
+msgstr ""
+
+#. module: sase
+#: model_terms:ir.ui.view,arch_db:sase.view_search_situation
+msgid "Etat"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields.selection,name:sase.selection__sase_enfant__genre__female
+msgid "Féminin"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_enfant__genre
+msgid "Genre"
+msgstr ""
+
+#. module: sase
+#: model_terms:ir.ui.view,arch_db:sase.view_search_situation
+msgid "Group By"
+msgstr "Regroupé par"
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_enfant__id
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__id
+#: model:ir.model.fields,field_description:sase.field_sase_rapport__id
+#: model:ir.model.fields,field_description:sase.field_sase_service__id
+#: model:ir.model.fields,field_description:sase.field_sase_service_employe__id
+#: model:ir.model.fields,field_description:sase.field_sase_situation__id
+#: model:ir.model.fields,field_description:sase.field_sase_situation_stats__id
+msgid "ID"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_intervenant__temps_travail
+msgid "Indique le temps de travail de l'intervenant."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_rapport__active
+msgid "Indique si le rapport est actif ou non."
+msgstr ""
+
+#. module: sase
+#: model:ir.actions.act_window,name:sase.action_window_sase_intervenant_all
+#: model:ir.model,name:sase.model_sase_intervenant
+#: model_terms:ir.ui.view,arch_db:sase.view_search_situation
+msgid "Intervenant"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__intervant_principal_id
+msgid "Intervenant Principal"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_situation__intervant_principal_id
+msgid "Intervenant principal associé à cette situation."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_rapport__intervenants_ids
+#: model:ir.model.fields,field_description:sase.field_sase_situation__intervenant_ids
+#: model:ir.ui.menu,name:sase.menu_sase_intervenant
+#: model_terms:ir.ui.view,arch_db:sase.view_list_rapport
+#: model_terms:ir.ui.view,arch_db:sase.view_search_rapport
+msgid "Intervenants"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_rapport__intervenants_ids
+msgid "Intervenants associés à ce rapport."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.constraint,message:sase.constraint_sase_enfant_unique_name
+msgid "La combinaison de nom, prénom et date de naissance doit être unique."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_service_employe__qualite
+msgid "La qualité de ce responsable dans le service mandant."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_enfant__write_uid
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__write_uid
+#: model:ir.model.fields,field_description:sase.field_sase_rapport__write_uid
+#: model:ir.model.fields,field_description:sase.field_sase_service__write_uid
+#: model:ir.model.fields,field_description:sase.field_sase_service_employe__write_uid
+#: model:ir.model.fields,field_description:sase.field_sase_situation__write_uid
+#: model:ir.model.fields,field_description:sase.field_sase_situation_stats__write_uid
+msgid "Last Updated by"
+msgstr "Dernière modification par"
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_enfant__write_date
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__write_date
+#: model:ir.model.fields,field_description:sase.field_sase_rapport__write_date
+#: model:ir.model.fields,field_description:sase.field_sase_service__write_date
+#: model:ir.model.fields,field_description:sase.field_sase_service_employe__write_date
+#: model:ir.model.fields,field_description:sase.field_sase_situation__write_date
+#: model:ir.model.fields,field_description:sase.field_sase_situation_stats__write_date
+msgid "Last Updated on"
+msgstr "Dernière modification le"
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__latence
+msgid "Latence"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_situation__service_id
+msgid "Le service auquel cette situation est associée."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_service_employe__service_id
+msgid "Le service mandant auquel ce responsable est affecté."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_rapport__lien_rapport
+msgid "Lien vers le rapport"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_rapport__lien_rapport
+msgid ""
+"Lien vers le rapport. Attention à ne pas le déplacer dans le système de "
+"fichiers."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__service_mandant
+#: model_terms:ir.ui.view,arch_db:sase.view_form_situation
+#: model_terms:ir.ui.view,arch_db:sase.view_search_situation
+msgid "Mandant"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields.selection,name:sase.selection__sase_enfant__genre__male
+msgid "Masculin"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields.selection,name:sase.selection__sase_intervenant__temps_travail__mi_temps
+msgid "Mi-temps"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_enfant__nom
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__nom
+#: model:ir.model.fields,field_description:sase.field_sase_rapport__nom
+#: model:ir.model.fields,field_description:sase.field_sase_service_employe__nom
+#: model:ir.model.fields,field_description:sase.field_sase_situation__nom
+#: model_terms:ir.ui.view,arch_db:sase.view_search_situation
+msgid "Nom"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__display_name
+msgid "Nom complet"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_service__nom
+msgid "Nom du service"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__nb_enfants
+#: model:ir.model.fields,field_description:sase.field_sase_situation__enfant_nb
+msgid "Nombre d'enfants"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_intervenant__nb_enfants
+msgid "Nombre d'enfants associés à l'intervenant."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_situation__equivalent_situation
+msgid ""
+"Nombre d'équivalents PC pour cette situation en fonction du nombre "
+"d'enfants."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_service__nb_places_occupees
+msgid "Nombre de PC actuellement occupées dans ce service."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_service__nb_places_allouees
+msgid "Nombre de PC allouées"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_service__nb_places_allouees
+msgid "Nombre de PC allouées pour ce service."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_service__nb_places_occupees
+msgid "Nombre de PC occupées"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_service__nb_places_reservees
+msgid "Nombre de PC réservées"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_service__nb_places_reservees
+msgid "Nombre de PC réservées pour ce service."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__nb_jours
+msgid "Nombre de jours depuis l'officialisation"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_situation__latence
+msgid "Nombre de jours entre la notification et l'officialisation/annulation"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__nb_situation_principal
+msgid "Nombre de situations principales"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__nb_situation_secondaire
+msgid "Nombre de situations secondaires"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields.selection,name:sase.selection__sase_enfant__genre__other
+msgid "Non binaire"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_enfant__notes
+#: model:ir.model.fields,field_description:sase.field_sase_situation__notes
+msgid "Notes"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_situation__notes
+msgid "Notes supplémentaires concernant cette situation."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation_stats__pc_a_atteindre
+msgid "Number to Reach"
+msgstr "Nombre à atteindre"
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__equivalent_situation
+msgid "PC (équivalent)"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_service__employe_ids
+msgid "Personne de référence"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_service__employe_ids
+msgid "Personnes associés à ce service mandant."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_enfant__prenom
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__prenom
+msgid "Prénom"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_service_employe__qualite
+msgid "Qualité"
+msgstr ""
+
+#. module: sase
+#: model:ir.actions.act_window,name:sase.action_window_sase_rapports_all
+#: model:ir.model,name:sase.model_sase_rapport
+msgid "Rapport"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__is_report_due
+msgid "Rapport dû"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_enfant__rapport_ids
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__rapport_ids
+#: model:ir.model.fields,field_description:sase.field_sase_situation__report_ids
+#: model:ir.ui.menu,name:sase.menu_sase_rapports
+#: model_terms:ir.ui.view,arch_db:sase.view_form_enfant
+#: model_terms:ir.ui.view,arch_db:sase.view_form_intervenant
+#: model_terms:ir.ui.view,arch_db:sase.view_form_situation
+msgid "Rapports"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_intervenant__rapport_ids
+msgid "Rapports associés à cet intervenant."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_situation__report_ids
+msgid "Rapports associés à cette situation."
+msgstr ""
+
+#. module: sase
+#: model:ir.ui.menu,name:sase.menu_sase
+msgid "SASE"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_service_employe__service_id
+#: model:ir.model.fields,field_description:sase.field_sase_situation__service_id
+#: model:ir.model.fields,field_description:sase.field_sase_situation_stats__service_id
+#: model_terms:ir.ui.view,arch_db:sase.view_search_situation
+msgid "Service"
+msgstr ""
+
+#. module: sase
+#: model:ir.actions.act_window,name:sase.action_window_sase_service_all
+#: model:ir.model,name:sase.model_sase_service
+msgid "Service Mandant"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_situation_stats__service_id
+msgid "Service associated with this situation."
+msgstr ""
+
+#. module: sase
+#: model:ir.ui.menu,name:sase.menu_sase_service
+msgid "Services mandants"
+msgstr ""
+
+#. module: sase
+#: model:ir.actions.act_window,name:sase.action_window_sase_situation_all
+#: model:ir.model,name:sase.model_sase_situation
+#: model:ir.model.fields,field_description:sase.field_sase_rapport__situation_id
+#: model_terms:ir.ui.view,arch_db:sase.view_search_rapport
+msgid "Situation"
+msgstr ""
+
+#. module: sase
+#: model:ir.model,name:sase.model_sase_situation_stats
+msgid "Situation Statistics"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_rapport__situation_id
+msgid "Situation associée à ce rapport."
+msgstr ""
+
+#. module: sase
+#: model_terms:ir.ui.view,arch_db:sase.view_search_enfant
+msgid "Situation en cours"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_enfant__situation_ids
+#: model:ir.model.fields,field_description:sase.field_sase_service__situation_ids
+#: model:ir.ui.menu,name:sase.menu_sase_situation
+#: model_terms:ir.ui.view,arch_db:sase.view_form_service
+msgid "Situations"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__situation_principal_ids
+msgid "Situations Principales"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__situation_secondaire_ids
+msgid "Situations Secondaires"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_service__situation_ids
+msgid "Situations associées à ce service."
+msgstr ""
+
+#. module: sase
+#: model_terms:ir.ui.view,arch_db:sase.view_form_intervenant
+msgid "Situations en co-intervention"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_intervenant__situation_principal_ids
+msgid "Situations où cet intervenant est le principal."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_intervenant__situation_secondaire_ids
+msgid "Situations où cet intervenant est secondaire."
+msgstr ""
+
+#. module: sase
+#: model_terms:ir.ui.view,arch_db:sase.view_list_intervenant
+msgid "Somme des prises en charges"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_situation__state
+msgid "State"
+msgstr "Statut"
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__taux_occupation
+msgid "Taux d'occupation"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_intervenant__taux_occupation
+msgid "Taux d'occupation de l'intervenant basé sur le total PC."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields.selection,name:sase.selection__sase_intervenant__temps_travail__temps_complet
+msgid "Temps Complet"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__temps_travail
+msgid "Temps de travail"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields.selection,name:sase.selection__sase_situation__state__done
+#: model_terms:ir.ui.view,arch_db:sase.view_form_situation
+msgid "Terminé"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,help:sase.field_sase_enfant__situation_ids
+msgid "The situations associated with this child."
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_service_employe__titre
+msgid "Titre"
+msgstr ""
+
+#. module: sase
+#: model_terms:ir.ui.view,arch_db:sase.view_list_service
+#: model_terms:ir.ui.view,arch_db:sase.view_list_situation
+msgid "Total"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__total_pc
+msgid "Total PC"
+msgstr ""
+
+#. module: sase
+#: model_terms:ir.ui.view,arch_db:sase.view_search_rapport
+#: model_terms:ir.ui.view,arch_db:sase.view_search_situation
+msgid "Tous"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_intervenant__telephone
+#: model:ir.model.fields,field_description:sase.field_sase_service_employe__telephone
+msgid "Téléphone"
+msgstr ""
+
+#. module: sase
+#: model:ir.model.fields,field_description:sase.field_sase_enfant__age
+msgid "Âge"
+msgstr ""

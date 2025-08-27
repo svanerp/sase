@@ -25,7 +25,7 @@ class Intervenant(models.Model):
     telephone = fields.Char(string="Téléphone")
     situation_principal_ids = fields.One2many(
         comodel_name="sase.situation",
-        inverse_name="intervant_principal_id",
+        inverse_name="intervenant_principal_id",
         string="Situations Principales",
         help="Situations où cet intervenant est le principal.",
     )
@@ -41,7 +41,7 @@ class Intervenant(models.Model):
         store=True,
     )
     nb_situation_secondaire = fields.Integer(
-        string="Nombre de situations secondaires",
+        string="Nombre de situations en co-intervention",
         compute="_compute_nb_situation",
         store=True,
     )

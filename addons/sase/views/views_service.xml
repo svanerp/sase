@@ -30,7 +30,7 @@
 
                                 <field name="titre" />
                                 <field name="nom" />
-                                <field name="is_directeur" />
+                                <field name="qualite" />
                             </list>
                         </field>
                         <field name="nb_places_allouees" />

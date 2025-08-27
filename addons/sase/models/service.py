@@ -9,15 +9,15 @@ _logger = logging.getLogger(__name__)
 
 class Service(models.Model):
     _name = "sase.service"
-    _description = "Service"
+    _description = "Service Mandant"
     _rec_name = "nom"
 
-    nom = fields.Char(string="Nom", required=True)
+    nom = fields.Char(string="Nom du service", required=True)
     employe_ids = fields.One2many(
         comodel_name="sase.service_employe",
         inverse_name="service_id",
-        string="Employés",
-        help="Employés associés à ce service.",
+        string="Personne de référence",
+        help="Personnes associés à ce service mandant.",
     )
     nb_places_allouees = fields.Integer(
         string="Nombre de PC allouées",

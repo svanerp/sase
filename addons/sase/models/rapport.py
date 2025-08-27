@@ -7,7 +7,7 @@ class Rapport(models.Model):
     _name = "sase.rapport"
     _description = "Rapport"
     _rec_name = "nom"
-    order = "date_prevue asc"
+    _order = "date_prevue asc"
 
     nom = fields.Char(string="Nom", required=True)
     date_prevue = fields.Date(

@@ -1,10 +1,10 @@
-id,nom,description,service_id:id
-situation_demo_1,Famille Alpha,Description for situation A,service_saj_AAA
-situation_demo_2,Famille Beta,Description for situation B,service_saj_AAA
-situation_demo_3,Famille Gamma,Description for situation C,service_saj_AAA
-situation_demo_4,Famille Delta,Description for situation D,service_saj_AAA
-situation_demo_5,Famille Epsilon,Description for situation E,service_saj_AAA
-situation_demo_6,Famille Zeta,Description for situation F,service_saj_AAA
-situation_demo_7,Famille Eta,Description for situation G,service_saj_AAA
-situation_demo_8,Famille Theta,Description for situation H,service_saj_AAA
+id,nom,description,service_id:id,intervenant_principal_id:id,intervenant_secondaire_id:id,enfant_ids:id,date_officialisation,date_sortie
+situation_demo_1,Famille Doe,Description for situation A,service_saj_AAA,intervenant_A,intervenant_B,"enfant_demo_1,enfant_demo_2",2025-01-15,2025-06-04
+situation_demo_2,Famille Johnson,Description for situation B,service_saj_AAA,intervenant_B,intervenant_D,enfant_demo_3
+situation_demo_3,Famille Smith,Description for situation C,service_saj_AAA,intervenant_C,intervenant_B,enfant_demo_4
+situation_demo_4,Famille Brown,Description for situation D,service_saj_AAA,intervenant_C,intervenant_F,enfant_demo_5
+situation_demo_5,Famille White,Description for situation E,service_saj_AAA,intervenant_B,intervenant_C,enfant_demo_6
+situation_demo_6,Famille Doe,Description for situation F,service_saj_AAA,intervenant_A,intervenant_C,"enfant_demo_1,enfant_demo_2",2025-08-01
+situation_demo_7,Famille Brown,Description for situation G,service_saj_AAA,intervenant_B,intervenant_E,enfant_demo_5
+situation_demo_8,Famille Smith,Description for situation H,service_saj_AAA,intervenant_E,intervenant_F,"enfant_demo_4"
 

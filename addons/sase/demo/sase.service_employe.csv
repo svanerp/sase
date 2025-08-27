@@ -1,7 +1,7 @@
-id,titre,nom,is_directeur,service_id:id
-directeur_A,Mme,Directrice A,True,service_saj_AAA
-directeur_B,Mme,Directrice B,True,service_spj_AAA
-delegue_AA,Mme,Délégué AA,,service_saj_AAA
-delegue_AB,Mme,Délégué AB,,service_saj_AAA
-delegue_BC,Mme,Délégué BC,,service_spj_AAA
-delegue_BD,Mme,Délégué BD,,service_spj_AAA
+id,titre,nom,qualite,service_id:id
+directeur_A,Mme,Directrice A,directrice,service_saj_AAA
+directeur_B,Mme,Directrice B,directrice,service_spj_AAA
+delegue_AA,Mme,Délégué AA,delegue,service_saj_AAA
+delegue_AB,Mme,Délégué AB,delegue,service_saj_AAA
+delegue_BC,Mme,Délégué BC,delegue,service_spj_AAA
+delegue_BD,Mme,Délégué BD,delegue,service_spj_AAA

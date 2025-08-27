@@ -28,7 +28,7 @@
         <menuitem id="menu_sase_intervenant" name="Intervenants" sequence="30" action="action_window_sase_intervenant_all" />
         <menuitem id="menu_sase_rapports" name="Rapports" sequence="40" action="action_window_sase_rapports_all" />
 
-        <menuitem id="menu_sase_service" name="Services" sequence="70" action="action_window_sase_service_all" />
+        <menuitem id="menu_sase_service" name="Services mandants" sequence="70" action="action_window_sase_service_all" />
 
     </menuitem>
 

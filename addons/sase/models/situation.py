@@ -85,15 +85,15 @@ class Situation(models.Model):
         compute="_compute_report_due",
         store=True,
     )
-    intervant_principal_id = fields.Many2one(
+    intervenant_principal_id = fields.Many2one(
         comodel_name="sase.intervenant",
         string="Intervenant Principal",
         help="Intervenant principal associé à cette situation.",
     )
     intervenant_secondaire_id = fields.Many2one(
         comodel_name="sase.intervenant",
-        string="Intervenant Secondaire",
-        help="Intervenant secondaire associé à cette situation.",
+        string="Co-intervenant",
+        help="Co-intervenant associé à cette situation.",
     )
     intervenant_ids = fields.Many2many(
         comodel_name="sase.intervenant",
@@ -133,7 +133,7 @@ class Situation(models.Model):
     )
     date_fin = fields.Date(
         string="Date de fin",
-        help="Date à laquelle la situation a pris fin.",
+        help="Date à laquelle la situation a pris fin (date de sortie ou date d'annulation).",
         compute="_compute_date_fin",
     )
     # Dates rapports
@@ -173,10 +173,10 @@ class Situation(models.Model):
 
         return res
 
-    @api.depends("intervant_principal_id", "intervenant_secondaire_id")
+    @api.depends("intervenant_principal_id", "intervenant_secondaire_id")
     def _compute_intervenants(self):
         for record in self:
-            record.intervenant_ids = record.intervant_principal_id | record.intervenant_secondaire_id
+            record.intervenant_ids = record.intervenant_principal_id | record.intervenant_secondaire_id
 
     @api.depends("date_officialisation", "intervenant_ids")
     def _update_reports(self):

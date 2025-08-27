@@ -46,7 +46,7 @@ class TestIntervenant(TransactionCase):
         for enfant in enfants:
             self.situation.enfant_ids = [(4, enfant.id)]
 
-        self.situation.intervant_principal_id = self.intervenant.id
+        self.situation.intervenant_principal_id = self.intervenant.id
         self.assertEqual(self.intervenant.nb_situation_principal, 1)
         self.assertEqual(self.intervenant.nb_situation_secondaire, 0)
         self.assertEqual(self.intervenant.total_pc, 1.0)
@@ -56,7 +56,7 @@ class TestIntervenant(TransactionCase):
         for enfant in enfants:
             self.situation.enfant_ids = [(4, enfant.id)]
 
-        self.situation.intervant_principal_id = self.intervenant.id
+        self.situation.intervenant_principal_id = self.intervenant.id
         s2 = self.env["sase.situation"].create(
             {
                 "nom": "Secondary Situation",
@@ -76,7 +76,7 @@ class TestIntervenant(TransactionCase):
         for enfant in enfants:
             self.situation.enfant_ids = [(4, enfant.id)]
 
-        self.situation.intervant_principal_id = self.intervenant.id
+        self.situation.intervenant_principal_id = self.intervenant.id
         self.assertEqual(self.intervenant.nb_situation_principal, 1)
         self.assertEqual(self.intervenant.nb_situation_secondaire, 0)
         self.assertEqual(self.intervenant.total_pc, 2.0)
