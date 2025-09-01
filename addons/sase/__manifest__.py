@@ -19,6 +19,7 @@
         "views/views_intervenant.xml",
         "views/views_rapport.xml",
         "data/res.users.csv",
+        "data/cron_historisation_situations.xml",
     ],
     "demo": [
         "demo/sase.intervenant.csv",

@@ -1,9 +1,9 @@
 <odoo>
     <record id="crons_report_due" model="ir.cron">
-        <field name="name">Cron vérifiant si un rapport est demandé</field>
-        <field name="model_id" ref="model_sase_situation" />
+        <field name="name">Historisation du nombre de situations</field>
+        <field name="model_id" ref="model_sase_situation_stats" />
         <field name="state">code</field>
-        <field name="code">model._compute_report_due()</field>
+        <field name="code">model.cron_historisation()</field>
         <field name="interval_number">1</field>
         <field name="interval_type">days</field>
     </record>
